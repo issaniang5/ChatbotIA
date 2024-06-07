@@ -1,11 +1,12 @@
 import openai
 import gradio as gr
+import yaml
 
-# Reading private yml file
+# Lecture d'un fichier yml privé
 with open("pass.yml") as f:
     content = f.read()
     
-# from credentials.yml import user name and password
+# Importer le nom d'utilisateur et le mot de passe depuis credentials.yml
 my_credentials = yaml.load(content, Loader=yaml.FullLoader)
 
 openai.api_key = my_credentials["api"]
